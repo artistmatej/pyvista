@@ -783,7 +783,7 @@ def test_opacity_by_array():
     p = pyvista.Plotter(off_screen=OFF_SCREEN)
     p.add_mesh(mesh, scalars='Spatial Point Data', opacity='opac',)
     p.show()
-    # Test with uncertainty array (transperancy)
+    # Test with uncertainty array (transparency)
     mesh['unc'] = mesh['Spatial Point Data']
     p = pyvista.Plotter(off_screen=OFF_SCREEN)
     p.add_mesh(mesh, scalars='Spatial Point Data', opacity='unc',

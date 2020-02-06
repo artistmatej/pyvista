@@ -47,7 +47,7 @@ def test_multi_block_init_dict():
     multi = pyvista.MultiBlock(data)
     assert isinstance(multi, pyvista.MultiBlock)
     assert multi.n_blocks == 2
-    # Note that disctionaries do not maintain order
+    # Note that dictionaries do not maintain order
     assert isinstance(multi.GetBlock(0), (pyvista.RectilinearGrid, pyvista.PolyData))
     assert multi.get_block_name(0) in ['grid','poly']
     assert isinstance(multi.GetBlock(1), (pyvista.RectilinearGrid, pyvista.PolyData))
@@ -148,7 +148,7 @@ def test_mutli_block_clean():
     multi[2, 'empty'] = pyvista.PolyData()
     multi[3, 'mempty'] = pyvista.MultiBlock()
     multi[5, 'uni'] = ex.load_uniform()
-    # perfromt he clean to remove all Null elements
+    # perform the clean to remove all Null elements
     multi.clean()
     assert multi.n_blocks == 2
     assert multi.GetNumberOfBlocks() == 2
@@ -163,7 +163,7 @@ def test_mutli_block_clean():
     multi = pyvista.MultiBlock()
     multi[1, 'rect'] = ex.load_rectilinear()
     multi[5, 'multi'] = foo
-    # perfromt he clean to remove all Null elements
+    # perform the clean to remove all Null elements
     assert multi.n_blocks == 6
     multi.clean()
     assert multi.n_blocks == 2
